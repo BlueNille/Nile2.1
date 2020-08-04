@@ -1,0 +1,10 @@
+{
+	"auth": {
+		"nile3199cce28b": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}
