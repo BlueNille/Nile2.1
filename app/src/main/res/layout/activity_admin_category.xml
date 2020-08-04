@@ -90,13 +90,6 @@
             />
 
         <ImageView
-            android:id="@+id/hats_caps"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/hats"
-            />
-
-        <ImageView
             android:id="@+id/shoes"
             android:layout_width="70dp"
             android:layout_height="80dp"

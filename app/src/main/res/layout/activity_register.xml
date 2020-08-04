@@ -10,11 +10,10 @@
     <ImageView
         android:id="@+id/register_applogo"
         android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:src="@drawable/applogo"
+        android:layout_height="150dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="260dp"
-        />
+        android:layout_marginTop="190dp"
+        android:src="@drawable/applogo" />
 
     <EditText
         android:id="@+id/register_username_input"
@@ -28,7 +27,7 @@
         android:hint="Name"
         android:inputType="text"
         android:textColor="@color/colorPrimaryDark"
-        android:textColorHint="@color/colorPrimaryDark"
+        android:textColorHint="@android:color/white"
         android:textSize="19sp"
         />
 
@@ -44,7 +43,7 @@
         android:hint="Phone Number"
         android:inputType="number"
         android:textColor="@color/colorPrimaryDark"
-        android:textColorHint="@color/colorPrimaryDark"
+        android:textColorHint="@android:color/white"
         android:textSize="19sp"
         android:layout_marginTop="6dp"
         />
@@ -63,7 +62,7 @@
         android:hint="Password"
         android:inputType="textPassword"
         android:textColor="@color/colorPrimaryDark"
-        android:textColorHint="@color/colorPrimaryDark"
+        android:textColorHint="@android:color/white"
         android:textSize="19sp"
         />
 

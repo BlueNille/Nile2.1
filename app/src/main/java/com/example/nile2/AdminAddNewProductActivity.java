@@ -1,4 +1,4 @@
-package com.example.nile2;
+/*package com.example.nile2;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -240,3 +240,4 @@ public class AdminAddNewProductActivity extends AppCompatActivity
                 });
     }
 }
+*/

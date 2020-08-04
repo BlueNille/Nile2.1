@@ -3,8 +3,7 @@ package com.example.nile2;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+//import android.support.annotation.NonNull;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -12,7 +11,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.codingcafe.ecommerce.Prevalent.Prevalent;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.nile2.Prevalent.Prevalent;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -31,7 +32,7 @@ import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class SettinsActivity extends AppCompatActivity
+public class SettingsActivity extends AppCompatActivity
 {
     private CircleImageView profileImageView;
     private EditText fullNameEditText, userPhoneEditText, addressEditText;
@@ -40,17 +41,16 @@ public class SettinsActivity extends AppCompatActivity
     private Uri imageUri;
     private String myUrl = "";
     private StorageTask uploadTask;
-    private StorageReference storageProfilePrictureRef;
+    private StorageReference storageProfilePictureRef;
     private String checker = "";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settins);
+        setContentView(R.layout.activity_settings);
 
-        storageProfilePrictureRef = FirebaseStorage.getInstance().getReference().child("Profile pictures");
+        storageProfilePictureRef = FirebaseStorage.getInstance().getReference().child("Profile pictures");
 
         profileImageView = (CircleImageView) findViewById(R.id.settings_profile_image);
         fullNameEditText = (EditText) findViewById(R.id.settings_full_name);
@@ -97,7 +97,7 @@ public class SettinsActivity extends AppCompatActivity
 
                 CropImage.activity(imageUri)
                         .setAspectRatio(1, 1)
-                        .start(SettinsActivity.this);
+                        .start(SettingsActivity.this);
             }
         });
     }
@@ -112,10 +112,10 @@ public class SettinsActivity extends AppCompatActivity
         userMap. put("name", fullNameEditText.getText().toString());
         userMap. put("address", addressEditText.getText().toString());
         userMap. put("phoneOrder", userPhoneEditText.getText().toString());
-        ref.child(com.example.nile2.Prevalent.currentOnlineUser.getPhone()).updateChildren(userMap);
+        ref.child(Prevalent.currentOnlineUser.getPhone()).updateChildren(userMap);
 
-        startActivity(new Intent(SettinsActivity.this, MainActivity.class));
-        Toast.makeText(SettinsActivity.this, "Profile Info update successfully.", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(SettingsActivity.this, MainActivity.class));
+        Toast.makeText(SettingsActivity.this, "Profile Info update successfully.", Toast.LENGTH_SHORT).show();
         finish();
     }
 
@@ -136,7 +136,7 @@ public class SettinsActivity extends AppCompatActivity
         {
             Toast.makeText(this, "Error, Try Again.", Toast.LENGTH_SHORT).show();
 
-            startActivity(new Intent(SettinsActivity.this, SettinsActivity.class));
+            startActivity(new Intent(SettingsActivity.this, SettingsActivity.class));
             finish();
         }
     }
@@ -176,8 +176,8 @@ public class SettinsActivity extends AppCompatActivity
 
         if (imageUri != null)
         {
-            final StorageReference fileRef = storageProfilePrictureRef
-                    .child(com.example.nile2.Prevalent.currentOnlineUser.getPhone() + ".jpg");
+            final StorageReference fileRef = storageProfilePictureRef
+                    .child(Prevalent.currentOnlineUser.getPhone() + ".jpg");
 
             uploadTask = fileRef.putFile(imageUri);
 
@@ -209,18 +209,18 @@ public class SettinsActivity extends AppCompatActivity
                                 userMap. put("address", addressEditText.getText().toString());
                                 userMap. put("phoneOrder", userPhoneEditText.getText().toString());
                                 userMap. put("image", myUrl);
-                                ref.child(com.example.nile2.Prevalent.currentOnlineUser.getPhone()).updateChildren(userMap);
+                                ref.child(Prevalent.currentOnlineUser.getPhone()).updateChildren(userMap);
 
                                 progressDialog.dismiss();
 
-                                startActivity(new Intent(SettinsActivity.this, MainActivity.class));
-                                Toast.makeText(SettinsActivity.this, "Profile Info update successfully.", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(SettingsActivity.this, MainActivity.class));
+                                Toast.makeText(SettingsActivity.this, "Profile Info update successfully.", Toast.LENGTH_SHORT).show();
                                 finish();
                             }
                             else
                             {
                                 progressDialog.dismiss();
-                                Toast.makeText(SettinsActivity.this, "Error.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SettingsActivity.this, "Error.", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -234,7 +234,7 @@ public class SettinsActivity extends AppCompatActivity
 
     private void userInfoDisplay(final CircleImageView profileImageView, final EditText fullNameEditText, final EditText userPhoneEditText, final EditText addressEditText)
     {
-        DatabaseReference UsersRef = FirebaseDatabase.getInstance().getReference().child("Users").child(com.example.nile2.Prevalent.currentOnlineUser.getPhone());
+        DatabaseReference UsersRef = FirebaseDatabase.getInstance().getReference().child("Users").child(Prevalent.currentOnlineUser.getPhone());
 
         UsersRef.addValueEventListener(new ValueEventListener() {
             @Override

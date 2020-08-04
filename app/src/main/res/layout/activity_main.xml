@@ -11,22 +11,22 @@
 
     <ImageView
         android:id="@+id/app_logo"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
+        android:layout_width="200dp"
+        android:layout_height="250dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
         android:src="@drawable/applogo"
         />
 
-    <TextView
-        android:id="@+id/app_slogan"
+    //TextView
+        //android:id="@+id/app_slogan"
         android:layout_width="248dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:layout_marginEnd="80dp"
         android:layout_marginTop="142dp"
-        android:text="Find, Discover, Choose and Buy anything online."
+        android:text="Browse Ethiopian Books"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         android:textSize="25sp"
@@ -43,11 +43,11 @@
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:background="@drawable/buttons"
+        android:background="@drawable/input_design"
         android:padding="20dp"
         android:textAllCaps="false"
         android:textSize="18sp"
-        android:text="Already have an Account? Login"
+        android:text="Have an Account? Login"
         android:textColor="@android:color/white"
         />
 

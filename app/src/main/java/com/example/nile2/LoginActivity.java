@@ -2,8 +2,6 @@ package com.example.nile2;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -12,8 +10,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.codingcafe.ecommerce.Model.Users;
-import com.example.codingcafe.ecommerce.Prevalent.Prevalent;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.nile2.Model.Users;
+import com.example.nile2.Prevalent.Prevalent;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity
     private EditText InputPhoneNumber, InputPassword;
     private Button LoginButton;
     private ProgressDialog loadingBar;
-    private TextView AdminLink, NotAdminLink;
+    //private TextView AdminLink, NotAdminLink;
 
     private String parentDbName = "Users";
     private CheckBox chkBoxRememberMe;
@@ -44,8 +44,8 @@ public class LoginActivity extends AppCompatActivity
         LoginButton = (Button) findViewById(R.id.login_btn);
         InputPassword = (EditText) findViewById(R.id.login_password_input);
         InputPhoneNumber = (EditText) findViewById(R.id.login_phone_number_input);
-        AdminLink = (TextView) findViewById(R.id.admin_panel_link);
-        NotAdminLink = (TextView) findViewById(R.id.not_admin_panel_link);
+        //AdminLink = (TextView) findViewById(R.id.admin_panel_link);
+        //NotAdminLink = (TextView) findViewById(R.id.not_admin_panel_link);
         loadingBar = new ProgressDialog(this);
 
 
@@ -61,7 +61,7 @@ public class LoginActivity extends AppCompatActivity
             }
         });
 
-        AdminLink.setOnClickListener(new View.OnClickListener() {
+        /*AdminLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
             {
@@ -81,7 +81,7 @@ public class LoginActivity extends AppCompatActivity
                 NotAdminLink.setVisibility(View.INVISIBLE);
                 parentDbName = "Users";
             }
-        });
+        });*/
     }
 
 
@@ -117,8 +117,8 @@ public class LoginActivity extends AppCompatActivity
     {
         if(chkBoxRememberMe.isChecked())
         {
-            Paper.book().write(com.example.nile2.Prevalent.UserPhoneKey, phone);
-            Paper.book().write(com.example.nile2.Prevalent.UserPasswordKey, password);
+            Paper.book().write(Prevalent.UserPhoneKey, phone);
+            Paper.book().write(Prevalent.UserPasswordKey, password);
         }
 
 
@@ -138,21 +138,21 @@ public class LoginActivity extends AppCompatActivity
                     {
                         if (usersData.getPassword().equals(password))
                         {
-                            if (parentDbName.equals("Admins"))
+                            /*if (parentDbName.equals("Admins"))
                             {
                                 Toast.makeText(LoginActivity.this, "Welcome Admin, you are logged in Successfully...", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
 
                                 Intent intent = new Intent(LoginActivity.this, AdminCategoryActivity.class);
                                 startActivity(intent);
-                            }
-                            else if (parentDbName.equals("Users"))
+                            }*/
+                            if (parentDbName.equals("Users"))
                             {
                                 Toast.makeText(LoginActivity.this, "logged in Successfully...", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
 
                                 Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                                com.example.nile2.Prevalent.currentOnlineUser = usersData;
+                                Prevalent.currentOnlineUser = usersData;
                                 startActivity(intent);
                             }
                         }

@@ -12,11 +12,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+    <!--AWS login/Registration start-->
+
+<!--        <activity android:name=".MainActivity"-->
+<!--            android:label="@string/app_name"/>-->
+<!--        <activity android:name=".RegisterActivity"-->
+<!--            android:noHistory="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+        <activity android:name=".LoginActivity" />
+
         <activity
-            android:name=".HomeActivity"
-            android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".HomeActivity1" />
+                    android:name=".HomeActivity"
+                    android:label="@string/title_activity_home"
+                    android:theme="@style/AppTheme.NoActionBar" />
+
+
+
+        <!--AWS login/Registration End-->
+
+
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,11 +45,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".AdminAddNewProductActivity" />
-        <activity android:name=".AdminCategoryActivity" />
-        <activity android:name=".SettinsActivity" />
+
+
+<!--        <activity-->
+<!--            android:name=".HomeActivity"-->
+<!--            android:label="@string/title_activity_home"-->
+<!--            android:theme="@style/AppTheme.NoActionBar" >-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+
+<!--        <activity android:name=".LoginActivity" >-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+
+<!--        <activity android:name=".RegisterActivity" />-->
+<!--        <activity android:name=".AdminAddNewProductActivity" />-->
+<!--        <activity android:name=".AdminCategoryActivity" />-->
+
+<!--        <activity android:name=".SettingsActivity" />-->
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
