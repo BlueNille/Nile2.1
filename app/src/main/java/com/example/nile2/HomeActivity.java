@@ -19,9 +19,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.nile2.Model.Products;
-import com.example.nile2.Prevalent.Prevalent;
-import com.example.nile2.ViewHolder.ProductViewHolder;
+//import com.example.nile2.Model.Products;
+//import com.example.nile2.Prevalent.Prevalent;
+//import com.example.nile2.ViewHolder.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.navigation.NavigationView;
