@@ -42,9 +42,9 @@ import io.paperdb.Paper;
 public class HomeActivity extends AppCompatActivity
 //        implements NavigationView.OnNavigationItemSelectedListener
 {
-    private DatabaseReference ProductsRef;
-    private RecyclerView recyclerView;
-    RecyclerView.LayoutManager layoutManager;
+//    private DatabaseReference ProductsRef;
+//    private RecyclerView recyclerView;
+//    RecyclerView.LayoutManager layoutManager;
     private Button Logout;
 
 
